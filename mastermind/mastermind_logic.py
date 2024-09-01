@@ -26,10 +26,3 @@ class Mastermind:
         correct_digits = self.correct_digits(guess)
         correct_placement = self.correct_placement(guess)
         return f"Correct Digits: {correct_digits} \nCorrect Placement: {correct_placement}"
-
-
-
-
-mastermind = Mastermind(4)
-
-print(mastermind.evaluate_guess("1234"))
