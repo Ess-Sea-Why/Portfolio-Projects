@@ -64,27 +64,36 @@ title = """
  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------' 
 """
 
-print(title)
-print("Welcome to the in-terminal version of my mastermind game project, see if you can work out the four digit number in less than 10 attempts")
+continue_game = True
+while continue_game:
+    print(title)
+    print("Welcome to the in-terminal version of my mastermind game project, see if you can work out the four digit number in less than 10 attempts")
 
-game_is_on = True
-guess_valid = False
-remaining_attempts = 10
-mastermind = Mastermind(4)
-while game_is_on:
-    print(f"Remaining Attempts: {remaining_attempts}")
-    while not guess_valid:
-        guess = str(input("Input your answer: "))
-        guess_valid = mastermind.is_guess_valid(guess)
-        if not guess_valid:
-            print("Invalid input, try again")
+    game_is_on = True
     guess_valid = False
-    correct_dig, correct_place = mastermind.evaluate_guess(guess)
-    remaining_attempts -= 1
-    if correct_dig == 4 and correct_place == 4:
-        game_is_on = False
-        print("You successfully worked out the number!")
-    if remaining_attempts == 0:
-        game_is_on = False
-        print(f"You ran out of attempts, the number was {mastermind.number}")
+    remaining_attempts = 10
+    mastermind = Mastermind(4)
+    while game_is_on:
+        print(f"Remaining Attempts: {remaining_attempts}")
+        while not guess_valid:
+            guess = str(input("Input your answer: "))
+            guess_valid = mastermind.is_guess_valid(guess)
+            if not guess_valid:
+                print("Invalid input, try again")
+        guess_valid = False
+        correct_dig, correct_place = mastermind.evaluate_guess(guess)
+        remaining_attempts -= 1
+        if correct_dig == 4 and correct_place == 4:
+            game_is_on = False
+            print("You successfully worked out the number!")
+        if remaining_attempts == 0:
+            game_is_on = False
+            print(f"You ran out of attempts, the number was {mastermind.number}")
+
+    play_again = str(input("Would you like to play again? Y/N\n"))
+
+
+
+
+
 
