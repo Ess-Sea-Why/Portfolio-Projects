@@ -1,5 +1,6 @@
 import random
 
+
 class Mastermind:
     def __init__(self, digits):
         self.digits = digits
@@ -82,6 +83,7 @@ while continue_game:
                 print("Invalid input, try again")
         guess_valid = False
         correct_dig, correct_place = mastermind.evaluate_guess(guess)
+        print("\n")
         remaining_attempts -= 1
         if correct_dig == 4 and correct_place == 4:
             game_is_on = False
@@ -90,7 +92,17 @@ while continue_game:
             game_is_on = False
             print(f"You ran out of attempts, the number was {mastermind.number}")
 
-    play_again = str(input("Would you like to play again? Y/N\n"))
+    play_again = str(input("Would you like to play again? Y/N\n")).upper()
+    while play_again != "Y" and play_again != "N":
+        play_again = str(input("Invalid input, type Y to play again or N to end the game\n")).upper()
+
+    if play_again == "Y":
+        print("Starting new game")
+
+    elif play_again == "N":
+        print("ending game")
+        continue_game = False
+
 
 
 
