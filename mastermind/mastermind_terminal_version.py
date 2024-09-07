@@ -51,7 +51,7 @@ class Mastermind:
             return True
 
 
-title = """ 
+title = r""" 
  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .-----------------. .----------------. 
 | .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
 | | ____    ____ | || |      __      | || |    _______   | || |  _________   | || |  _________   | || |  _______     | || | ____    ____ | || |     _____    | || | ____  _____  | || |  ________    | |
@@ -68,7 +68,8 @@ title = """
 continue_game = True
 while continue_game:
     print(title)
-    print("Welcome to the in-terminal version of my mastermind game project, see if you can work out the four digit number in less than 10 attempts")
+    print("Welcome to the in-terminal version of my mastermind game project, see if you can work out the four digit "
+          "number in less than 10 attempts")
 
     game_is_on = True
     guess_valid = False
